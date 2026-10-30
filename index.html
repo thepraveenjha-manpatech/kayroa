@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E0B08">
+<title>KAYROA - Markk Shoe Laundry and Spazzu</title>
+<meta name="description" content="KAYROA is the parent of two shoe-care ventures: Markk Shoe Laundry, a cleaning, repair and restoration workshop in Pune since 1985, and Spazzu, an instant shoe cleaning foam.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KAYROA">
+<meta property="og:description" content="Two ventures, one obsession with shoes. Markk Shoe Laundry and Spazzu.">
+<meta property="og:image" content="./markk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:opsz,wght@9..144,900&family=Hanken+Grotesk:wght@400;500;700&display=swap">
+
+<style>
+/* KAYROA. A doorway, not a brochure. Two panels, each typeset and coloured in
+   its own venture's voice, so the house reads as one family at a glance. */
+:root{
+  --void:#0E0B08; --bone:#F6F2EA; --mute:#8C8175;
+  --gold:#E0A020; --flash:#F7D21E;
+  --tan:#A4613A; --ink:#141110;
+  --body:'Hanken Grotesk',system-ui,-apple-system,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--void);color:var(--bone);font-family:var(--body);
+  line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:#120D04}
+
+.lbl{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:700}
+
+/* ---------- masthead ---------- */
+header{position:relative;z-index:5;text-align:center;
+  padding:clamp(24px,3.4vw,40px) 20px clamp(16px,2vw,22px)}
+.word{font-family:var(--body);font-weight:700;font-size:clamp(24px,3vw,34px);
+  letter-spacing:.42em;text-indent:.42em;color:var(--bone)}
+header p{margin-top:12px;color:var(--mute);font-size:clamp(13px,1.3vw,15px);
+  letter-spacing:.04em}
+
+/* ---------- the two doors ---------- */
+.gate{display:flex;min-height:clamp(430px,74svh,760px);
+  border-top:1px solid rgba(246,242,234,.12)}
+.door{position:relative;flex:1 1 0%;overflow:hidden;display:flex;
+  align-items:flex-end;isolation:isolate;
+  transition:flex-grow .6s cubic-bezier(.2,.8,.2,1),filter .5s}
+.door + .door{border-left:1px solid rgba(246,242,234,.12)}
+.door .bg{position:absolute;inset:0;z-index:-2}
+.door .bg img{width:100%;height:100%;object-fit:cover;
+  transition:transform 1.1s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.door .veil{position:absolute;inset:0;z-index:-1;transition:opacity .5s}
+
+.door .inner{position:relative;width:100%;padding:clamp(26px,3.2vw,52px);
+  display:flex;flex-direction:column;gap:12px}
+.door .name{line-height:.92;letter-spacing:-.02em}
+.door .say{max-width:38ch;font-size:clamp(14.5px,1.35vw,16.5px)}
+.enter{display:inline-flex;align-items:center;gap:10px;margin-top:8px;
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+  transition:gap .35s}
+.enter svg{width:17px;height:11px;overflow:visible}
+.door:hover .enter{gap:18px}
+.door:hover .bg img{transform:scale(1.055)}
+
+/* Markk door: bone paper, ink serif, leather tan */
+.markk{background:var(--bone);color:var(--ink)}
+.markk .veil{background:linear-gradient(180deg,rgba(246,242,234,.08) 0%,
+  rgba(246,242,234,.3) 38%,rgba(246,242,234,.9) 76%,rgba(246,242,234,.99) 100%)}
+.markk .name{font-family:'Fraunces',Georgia,serif;font-weight:900;
+  font-size:clamp(38px,5vw,74px)}
+.markk .lbl{color:var(--tan)}
+.markk .say{color:#4A4139}
+.markk .enter{color:var(--tan)}
+
+/* Spazzu door: the dark lab, gold */
+.spazzu{background:#0A0704;color:var(--bone)}
+.spazzu .veil{background:linear-gradient(180deg,rgba(10,7,4,.1) 0%,
+  rgba(10,7,4,.32) 40%,rgba(10,7,4,.9) 78%,rgba(10,7,4,.99) 100%)}
+.spazzu .name{font-family:'Archivo Black','Arial Black',sans-serif;
+  font-size:clamp(38px,5vw,74px);text-transform:uppercase}
+.spazzu .lbl{color:var(--gold)}
+.spazzu .say{color:#A99C86}
+.spazzu .enter{color:var(--flash)}
+
+@media (hover:hover) and (min-width:981px){
+  .gate:hover .door{flex-grow:.84;filter:saturate(.72)}
+  .gate .door:hover{flex-grow:1.34;filter:none}
+}
+
+/* ---------- house strip ---------- */
+.house{border-top:1px solid rgba(246,242,234,.12);
+  padding:clamp(40px,5vw,66px) 0}
+.wrap{width:min(1180px,100% - clamp(22px,5vw,72px));margin-inline:auto}
+.house .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  gap:clamp(26px,5vw,70px);align-items:start}
+.house h2{font-family:var(--body);font-weight:700;font-size:clamp(20px,2.1vw,27px);
+  line-height:1.3;letter-spacing:-.01em;margin-top:14px}
+.house p{color:var(--mute);margin-top:14px;max-width:56ch;font-size:16px}
+.rows{margin-top:6px}
+.row{display:grid;grid-template-columns:minmax(76px,24%) 1fr;gap:16px;padding:14px 0;
+  border-top:1px solid rgba(246,242,234,.12)}
+.row:last-child{border-bottom:1px solid rgba(246,242,234,.12)}
+.row dt{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mute);font-weight:700;padding-top:4px}
+.row dd{font-size:16px}
+.row dd a{color:var(--flash);font-weight:700}
+
+footer{border-top:1px solid rgba(246,242,234,.12);padding:26px 0 40px;
+  color:var(--mute);font-size:13.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center}
+footer .word{font-size:15px;letter-spacing:.3em;text-indent:.3em;color:var(--bone)}
+footer span{margin-left:auto}
+
+@media (max-width:980px){
+  .gate{flex-direction:column;min-height:0}
+  .door{flex:none;min-height:min(46svh,390px)}
+  .door + .door{border-left:0;border-top:1px solid rgba(246,242,234,.12)}
+  /* short panels put the copy over the bright part of the photo, so the veil
+     has to come in earlier than it does on a tall desktop panel */
+  .markk .veil{background:linear-gradient(180deg,rgba(246,242,234,.04) 0%,
+    rgba(246,242,234,.58) 26%,rgba(246,242,234,.95) 62%,rgba(246,242,234,1) 100%)}
+  .spazzu .veil{background:linear-gradient(180deg,rgba(10,7,4,.06) 0%,
+    rgba(10,7,4,.6) 26%,rgba(10,7,4,.95) 62%,rgba(10,7,4,1) 100%)}
+  .door .name{font-size:clamp(32px,8.6vw,44px)}
+  .house .grid{grid-template-columns:1fr}
+  footer span{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.001ms!important;animation-duration:.001ms!important}
+}
+</style>
+
+<header>
+  <p class="word">KAYROA</p>
+  <p>Two ventures. One obsession with shoes.</p>
+</header>
+
+<main class="gate">
+  <a class="door markk" href="https://thepraveenjha-manpatech.github.io/markk/">
+    <span class="bg"><img src="./markk.jpg" width="880" height="1086"
+      alt="A sneaker being cleaned by hand at the Markk workshop"></span>
+    <span class="veil"></span>
+    <span class="inner">
+      <span class="lbl">The workshop / Pune, since 1985</span>
+      <span class="name">Markk<br>Shoe Laundry</span>
+      <span class="say">Cleaning, repair and restoration by hand. Free pickup and
+        drop across Pune and PCMC.</span>
+      <span class="enter">Enter the workshop
+        <svg viewBox="0 0 17 11" fill="none" aria-hidden="true"><path d="M0 5.5h15M11 1l4.5 4.5L11 10"
+          stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+          stroke-linejoin="round"/></svg></span>
+    </span>
+  </a>
+
+  <a class="door spazzu" href="https://thepraveenjha-manpatech.github.io/spazzu/">
+    <span class="bg"><img src="./spazzu.jpg" width="900" height="900"
+      alt="The Spazzu instant shoe cleaning foam can" loading="lazy"></span>
+    <span class="veil"></span>
+    <span class="inner">
+      <span class="lbl">The product / 400 ml aerosol</span>
+      <span class="name">Spazzu</span>
+      <span class="say">Instant shoe cleaning foam. Spray it on, work it in, wipe it
+        off, no bucket and no soak.</span>
+      <span class="enter">See the product
+        <svg viewBox="0 0 17 11" fill="none" aria-hidden="true"><path d="M0 5.5h15M11 1l4.5 4.5L11 10"
+          stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+          stroke-linejoin="round"/></svg></span>
+    </span>
+  </a>
+</main>
+
+<section class="house">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <p class="lbl" style="color:var(--gold)">The house</p>
+        <h2>One bench taught us how shoes fail. Everything KAYROA makes starts
+          there.</h2>
+        <p>Markk has been cleaning, repairing and restoring footwear in Pune since
+          1985. Four decades at the bench is where Spazzu came from: the same people,
+          turning what they do by hand into something you can keep at home for the
+          weeks between visits.</p>
+      </div>
+      <div>
+        <p class="lbl" style="color:var(--gold)">Get in touch</p>
+        <dl class="rows">
+          <div class="row"><dt>Markk</dt>
+            <dd><a href="tel:+919975191459">+91 99751 91459</a><br>
+              Shop No 102, Jai Ganesh Vishwa, Vishrantwadi, Pune 411015</dd></div>
+          <div class="row"><dt>Spazzu</dt>
+            <dd><a href="tel:+919970726888">+91 99707 26888</a></dd></div>
+          <div class="row"><dt>Service area</dt>
+            <dd>Pune and PCMC, free pickup and drop</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="word">KAYROA</p>
+    <span>Markk Shoe Laundry and Spazzu are KAYROA ventures.</span>
+  </div>
+</footer>
